@@ -1,0 +1,16 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 50F9-C394
+
+ Directorio de C:\Users\Raul\Desktop\pspdam_madrid\ProcessBuilder
+
+28/10/2025  17:47    <DIR>          .
+28/10/2025  17:19    <DIR>          ..
+28/10/2025  17:19               344 .gitignore
+28/10/2025  17:47    <DIR>          .idea
+28/10/2025  17:47                 0 errores.txt
+28/10/2025  17:41    <DIR>          out
+28/10/2025  17:19               433 ProcessBuilder.iml
+28/10/2025  17:47                 0 resultado.txt
+28/10/2025  17:44    <DIR>          src
+               4 archivos            777 bytes
+               5 dirs  15.594.504.192 bytes libres
