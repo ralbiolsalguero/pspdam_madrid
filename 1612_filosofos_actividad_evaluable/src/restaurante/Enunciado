@@ -1,0 +1,23 @@
+
+
+Gestionar varios estados y sincronización más compleja
+
+Simula un restaurante con:
+- Camareros (productores de pedidos)
+- Cocineros (consumidores de pedidos)
+
+Condiciones:
+
+Máximo 10 pedidos en cocina.
+
+Si la cocina está llena -> camareros esperan -> wait()
+Si no hay pedidos -> cocineros esperan -> wait()
+
+Pedido añadido o retirado -> notifyAll()
+
+Requisitos:
+
+Clase Cocina como recurso compartido
+
+Uso obligatorio de wait() y notifyAll()
+
