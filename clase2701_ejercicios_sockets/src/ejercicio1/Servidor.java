@@ -9,16 +9,16 @@ public class Servidor {
 
         final int PUERTO = 5002;
 
-        try(ServerSocket servidor = new ServerSocket(PUERTO)){
-            System.out.println("Servidor MULTICLIENTE iniciado en puerto "+PUERTO);
+        try (ServerSocket servidor = new ServerSocket(PUERTO)) {
+            System.out.println("Servidor MULTICLIENTE iniciado en puerto " + PUERTO);
 
-            while(true){
+            while (true) {
                 //Esperando a que llegue el cliente
                 Socket sc = servidor.accept();
-                System.out.println("Cliente conectado: "+sc.getInetAddress()+":"+sc.getPort());
+                System.out.println("Cliente conectado: " + sc.getInetAddress() + ":" + sc.getPort());
 
                 //Creamos un hilo por cliente
-                Thread hilo = new Thread();
+                Thread hilo = new Thread(new ManejadorCliente(sc));
                 hilo.start();
 
             }
