@@ -1,0 +1,112 @@
+¿Qué es una expresión lambda?
+
+Una expresión lambda es una forma corta de escribir una función (bloque de código) sin crear una clase completa.
+
+Es una función anónima que se puede pasar como parámetro o ejecutar directamente.
+
+Ejemplo visual:
+
+() -> System.out.println("Hola");
+
+¿Para qué sirven las expresiones lambda?
+
+Sirven para:
+
+✔ Evitar crear clases innecesarias
+✔ Reducir código repetitivo
+✔ Hacer el código más claro y legible
+✔ Trabajar fácilmente con hilos, eventos y colecciones
+
+En PSP son MUY importantes para:
+
+- Thread
+
+- Runnable
+
+- Streams
+
+- Callbacks
+
+¿Por qué existen? (el problema que solucionan)
+
+Antes de Java 8, para pasar “un trozo de código” tenías que hacer esto:
+
+new Thread(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Hola desde un hilo");
+    }
+}).start();
+
+
+Mucho código para algo simple.
+
+Con lambda:
+
+new Thread(() -> System.out.println("Hola desde un hilo")).start();
+
+
+✔ Más corto
+✔ Más limpio
+✔ Más fácil de leer
+
+Sintaxis básica de una lambda
+(parámetros) -> { código }
+
+
+Ejemplos:
+
+() -> System.out.println("Hola")
+(x) -> x * 2
+(a, b) -> a + b
+
+¿Qué necesita Java para usar lambdas?
+
+Solo se pueden usar con interfaces funcionales.
+
+Una interfaz funcional es una interfaz con UN SOLO método abstracto.
+
+Ejemplo clásico:
+
+@FunctionalInterface
+public interface Runnable {
+    void run();
+}
+
+
+Por eso esto funciona:
+
+Runnable r = () -> System.out.println("Ejecutando...");
+
+Lambda + Hilos (PSP puro)
+Sin lambda
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Hilo en ejecución");
+    }
+};
+
+Thread t = new Thread(r);
+t.start();
+
+Con lambda
+Thread t = new Thread(() -> System.out.println("Hilo en ejecución"));
+t.start();
+
+
+Mismo resultado, mucho menos código.
+
+
+Ventajas:
+
+✔ Reduce código
+✔ Mejora legibilidad
+✔ Facilita programación funcional
+✔ Ideal para hilos y eventos
+✔ Evita clases anónimas innecesarias
+
+Desventajas:
+
+* Puede ser menos legible si se abusa
+* Difícil de entender al principio
+* No sustituye a clases complejas
